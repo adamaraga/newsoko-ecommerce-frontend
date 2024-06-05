@@ -1,0 +1,232 @@
+:root {
+  font-size: 62.5%;
+  --body-padding: 5%;
+}
+
+@import "abstracts/variable";
+
+@import "layouts/mainLayout";
+
+@import "components/topbar";
+@import "components/hero";
+@import "components/featured";
+@import "components/brands";
+@import "components/range";
+@import "components/footer";
+@import "components/headerImg";
+@import "components/cartModal";
+@import "components/paypalPayment";
+@import "components/drawer";
+
+@import "pages/home";
+@import "pages/shop";
+@import "pages/product";
+@import "pages/about";
+@import "pages/signin";
+@import "pages/contact";
+@import "pages/cart";
+@import "pages/checkout";
+@import "pages/account";
+@import "pages/notFound";
+
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-size: 1.6rem;
+  font-family: "Montserrat", sans-serif;
+  color: $text-color;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.btn {
+  background: $secondary-color;
+  min-width: 181px;
+  height: 50px;
+  border: none;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 3.5px;
+
+  &:hover {
+    background: #fff;
+    color: $secondary-color;
+  }
+}
+
+.btnAlt {
+  background: transparent;
+  min-width: 160px;
+  height: 50px;
+  border: none;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 3.5px;
+  border: 2px solid #fff;
+
+  &:hover {
+    background: #fff;
+    color: $secondary-color;
+  }
+}
+
+.loadingCon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+// @szhsin/react-menu
+
+.szh-menu {
+  box-shadow: none !important;
+  background-color: $primary-colorAlt !important;
+  border-radius: 0 !important;
+  color: #fff !important;
+  font-size: 12px !important;
+  text-transform: uppercase !important;
+
+  & li {
+    padding: 15px 20px !important;
+
+    &:hover {
+      background-color: $primary-colorAlt !important;
+      color: #fff !important;
+    }
+  }
+}
+
+/////////// MODAL STYLES ////////////
+
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.modal-overlayAlt {
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.modal-overlayCenter {
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.ReactModal__Content {
+  &:focus-visible {
+    outline: none !important;
+  }
+}
+
+/////////// PAGINATE ////////////
+
+.paginationBttns {
+  padding: 0;
+  /* height: 20px; */
+  list-style: none;
+  display: flex;
+  // align-self: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.paginationBttns a {
+  height: 33px;
+  width: 35px;
+  margin: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  background-color: rgb(226, 226, 226);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.paginationBttns a:hover {
+  color: white;
+  background-color: $primary-color !important;
+}
+
+.paginationActive a {
+  color: white;
+  background-color: $primary-color !important;
+}
+
+.paginationDisabled a {
+  color: #c3c3c3;
+  background-color: transparent;
+
+  &:hover {
+    color: #c3c3c3;
+    background-color: transparent !important;
+  }
+}
+.pignateCon {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}

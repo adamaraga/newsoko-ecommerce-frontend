@@ -1,0 +1,46 @@
+.brands {
+  background-color: #2ed6d36c;
+  min-height: 500px;
+  padding: 100px var(--body-padding);
+  background-image: url(../../../images/brandBg.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 0 1000px #0c2d50ab;
+  background-attachment: fixed;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+
+    & h3 {
+      font-size: 18px;
+      font-weight: 300;
+      text-transform: capitalize;
+      letter-spacing: 0.31px;
+      color: $secondary-color;
+      margin-bottom: 10px;
+    }
+
+    & h4 {
+      font-size: 29px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__main {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    @media screen and (max-width: 700px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media screen and (max-width: 500px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

@@ -1,0 +1,101 @@
+.cartModal {
+  &__main {
+    padding: 20px;
+    padding-top: 0;
+    width: 350px;
+    height: 100vh;
+    overflow: auto;
+    background-color: #fff;
+
+    @media screen and (max-width: 400px) {
+      width: 95vw;
+    }
+
+    &__close {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 15px;
+      font-size: 35px;
+      color: rgb(97, 97, 97);
+      cursor: pointer;
+    }
+
+    &__list {
+      &__item {
+        display: grid;
+        grid-template-columns: 4fr 8fr 1fr;
+        gap: 20px;
+        padding: 20px 0;
+        border-bottom: 1px solid #d5d8dc;
+
+        &__img {
+          width: 100%;
+        }
+
+        &__info {
+          font-weight: 600;
+          font-size: 14px;
+          text-transform: capitalize;
+          letter-spacing: 0.5px;
+          color: #000000;
+
+          & p {
+            margin: 0;
+          }
+        }
+
+        &__remove {
+          align-self: end;
+          cursor: pointer;
+
+          & span {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border: 1px solid #cdcdcd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            line-height: 15px;
+            color: #cdcdcd;
+          }
+        }
+      }
+    }
+
+    &__subtotal {
+      padding: 30px 0;
+      border-bottom: 1px solid #d5d8dc;
+      font-size: 22px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    &__btn {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      &__item {
+        height: 40px;
+        width: 100%;
+        background-color: $secondary-color;
+        color: #fff;
+        border: none;
+        font-size: 14px;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &.alt {
+          background-color: $primary-colorAlt;
+        }
+        &:hover {
+          background-color: gray;
+        }
+      }
+    }
+  }
+}

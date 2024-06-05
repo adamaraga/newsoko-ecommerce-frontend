@@ -1,0 +1,41 @@
+.drawer {
+  &__modal {
+    padding-top: 0;
+    width: 250px;
+    height: 100vh;
+    overflow: auto;
+    background-color: #0c2d50f0;
+    color: #fff;
+
+    &__close {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 15px;
+      font-size: 35px;
+      cursor: pointer;
+      padding-right: 30px;
+      margin-bottom: 20px;
+    }
+
+    &__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      &__item {
+        padding: 15px 20px;
+        text-transform: capitalize;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $secondary-color;
+        }
+        &.active {
+          background-color: $secondary-color;
+        }
+      }
+    }
+  }
+}

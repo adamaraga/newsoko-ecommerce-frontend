@@ -1,0 +1,12 @@
+.about {
+  &__main {
+    padding: 100px var(--body-padding);
+    color: #000000;
+    font-size: 14px;
+    font-weight: 500;
+
+    & li {
+      margin-bottom: 10px;
+    }
+  }
+}

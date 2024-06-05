@@ -1,0 +1,147 @@
+.product {
+  &__main {
+    padding: 60px var(--body-padding);
+    border-bottom: 7px solid #eaeaea;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 3%;
+
+    &__imgCon {
+      padding: 20px;
+      border: 3px solid #eaeaea;
+    }
+
+    &__right {
+      & h2 {
+        font-weight: 600;
+        text-transform: capitalize;
+        letter-spacing: 0.3px;
+        color: #000000;
+        font-size: 29px;
+        padding-bottom: 20px;
+      }
+
+      &__line {
+        width: 5%;
+        height: 3px;
+        display: inline-block;
+        background-color: $secondary-color;
+        margin-bottom: 20px;
+      }
+
+      &__price {
+        & span {
+          font-size: 22px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          color: gray;
+          text-decoration: line-through;
+        }
+
+        & p {
+          font-size: 22px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          text-decoration: underline;
+          margin: 0;
+          margin-bottom: 40px;
+        }
+      }
+
+      &__add {
+        & button {
+          &:hover {
+            background-color: $primary-color;
+            color: #fff;
+          }
+        }
+
+        & p {
+          color: red;
+        }
+
+        & span {
+          color: #b3af54;
+          font-size: 15px;
+        }
+
+        &__main {
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+          gap: 20px;
+
+          & input {
+            height: 50px;
+            padding-left: 10px;
+            width: 50px;
+            border-top: 2px solid #000;
+            font-size: 13px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+
+  &__info {
+    padding: 60px var(--body-padding);
+    border-bottom: 7px solid #eaeaea;
+
+    &__header {
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      &__item {
+        border: 1px solid #cfc8d8;
+        padding: 15px 20px;
+        border-radius: 4px 4px 0 0;
+        position: relative;
+        top: 1px;
+        border-bottom: none;
+        font-weight: 600;
+        color: #515151;
+
+        &.active {
+          background-color: #efefef;
+          border-bottom: none;
+        }
+      }
+    }
+
+    &__main {
+      background-color: #efefef;
+      border-top: 1px solid #cfc8d8;
+      padding: 30px;
+      min-height: 400px;
+
+      & h4 {
+        color: #7a7a7a;
+        font-size: 30px;
+        font-weight: 400;
+      }
+
+      &__ai {
+        border: 1px dotted rgba(0, 0, 0, 0.1);
+        border-left: none;
+        border-right: none;
+        margin-top: 20px;
+        display: flex;
+        padding: 10px;
+        gap: 3%;
+        & p {
+          margin: 0;
+        }
+
+        & span {
+          font-weight: 300;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  &__related {
+    padding: 60px var(--body-padding);
+  }
+}

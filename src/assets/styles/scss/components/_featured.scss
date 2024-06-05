@@ -1,0 +1,144 @@
+.featured {
+  padding: 150px var(--body-padding);
+
+  &__header {
+    text-align: center;
+    margin-bottom: 20px;
+
+    & h3 {
+      font-size: 18px;
+      font-weight: 300;
+      text-transform: capitalize;
+      letter-spacing: 0.31px;
+      color: $secondary-color;
+      margin-bottom: 10px;
+    }
+
+    & h4 {
+      font-size: 29px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__main {
+    &__btn {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+
+      &__item {
+        width: 32%;
+        border: none;
+        background-color: $primary-colorAlt;
+        padding: 15px;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 3.5px;
+        cursor: pointer;
+        text-wrap: nowrap;
+        transition: 0.3s;
+
+        @media screen and (max-width: 700px) {
+          width: 250px;
+        }
+
+        &.active {
+          background-color: $secondary-color;
+        }
+        &:hover {
+          background-color: $secondary-color;
+        }
+      }
+    }
+
+    &__products {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+
+      @media screen and (max-width: 1200px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      @media screen and (max-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media screen and (max-width: 750px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media screen and (max-width: 480px) {
+        grid-template-columns: 1fr;
+      }
+
+      &__item {
+        border: 1px solid #d9d9d9;
+        padding: 20px 10px;
+        background-color: #fff;
+        overflow: hidden;
+
+        &__imgCon {
+          height: 250px;
+          display: flex;
+          align-items: center;
+          position: relative;
+          overflow: hidden;
+
+          & p {
+            position: absolute;
+            width: 250px;
+            top: 50%;
+            left: 50%;
+            background-color: rgba(131, 131, 131, 0.9);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            transform: translate(-50%, -50%);
+          }
+        }
+
+        &__disc {
+          font-size: 12px;
+          font-weight: 400;
+          letter-spacing: 0.3px;
+          margin: 20px 0;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        &__price {
+          font-size: 12px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          & span {
+            text-decoration: line-through;
+            color: rgb(151, 151, 151);
+          }
+          & p {
+            text-decoration: underline;
+            font-weight: 700;
+          }
+        }
+
+        & button {
+          width: 120px;
+          height: 35px;
+
+          &:hover {
+            background-color: $primary-color;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

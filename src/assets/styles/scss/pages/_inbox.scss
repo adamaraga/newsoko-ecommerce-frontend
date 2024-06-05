@@ -1,0 +1,14 @@
+.inbox {
+  min-width: 400px;
+
+  &__main {
+    border-radius: 10px;
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .inbox {
+    min-width: 100%;
+  }
+}

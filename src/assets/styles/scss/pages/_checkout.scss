@@ -1,0 +1,32 @@
+.checkout {
+  &__main {
+    padding: 80px var(--body-padding);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    color: #7a7a7a;
+
+    @media screen and (max-width: 850px) {
+      grid-template-columns: 1fr;
+    }
+
+    & h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__left {
+    &__form {
+      &__inputCon {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+    }
+  }
+
+  &__right {
+    font-size: 14px;
+  }
+}
