@@ -97,7 +97,7 @@ const ProductsDB = () => {
         </div>
       </div>
       <div className="homeDB__users__table">
-        <div className="homeDB__users__table__body">
+        <div className="homeDB__users__table__body" style={{ minWidth: 1300 }}>
           <div className="homeDB__users__table__row head">
             <div
               style={{ width: "30px" }}

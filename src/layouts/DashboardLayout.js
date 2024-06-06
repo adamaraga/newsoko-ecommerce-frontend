@@ -3,10 +3,10 @@ import { Context } from "../context/MainContext";
 import { useNavigate, Outlet, Link } from "react-router-dom";
 import logoIcon from "../assets/images/logo.jpeg";
 import Sidebar from "../components/Sidebar";
-import { userLogOut } from "../context/Action";
+import DrawerDB from "../components/DrawerDB";
 
 const DashboardLayout = () => {
-  const { user, dispatch } = useContext(Context);
+  const { user } = useContext(Context);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,12 +17,6 @@ const DashboardLayout = () => {
       navigate("/dashboard");
     }
   }, [user, navigate]);
-
-  const handleLogout = () => {
-    localStorage.removeItem("sokoUser");
-    dispatch(userLogOut());
-    navigate("/login");
-  };
 
   return (
     <div className="dashboardLayout">
@@ -36,17 +30,10 @@ const DashboardLayout = () => {
         </Link>
 
         <div className="dashboardLayout__topbar__info">
-          <p>
-            Welcome{" "}
-            <b>
-              {user?.firstName}
-              {user?.lastName}
-            </b>
+          <p className="dashboardLayout__topbar__info__text">
+            Welcome <b>{user?.firstName}</b>
           </p>
-
-          <button className="btn" onClick={handleLogout}>
-            Logout
-          </button>
+          <DrawerDB />
         </div>
       </nav>
 

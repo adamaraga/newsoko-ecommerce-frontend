@@ -12,6 +12,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 30px;
+    gap: 20px;
 
     &__logo {
       height: 50px;
@@ -21,6 +22,12 @@
       display: flex;
       align-items: center;
       gap: 20px;
+
+      &__text {
+        @media screen and (max-width: 500px) {
+          display: none;
+        }
+      }
 
       & button {
         width: 80px;
@@ -34,5 +41,9 @@
     padding-top: 110px;
     padding-left: 280px;
     padding-right: 30px;
+
+    @media screen and (max-width: 1000px) {
+      padding-left: 30px;
+    }
   }
 }

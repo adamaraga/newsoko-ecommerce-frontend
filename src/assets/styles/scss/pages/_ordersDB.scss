@@ -16,8 +16,12 @@
 
     &__form {
       height: 50px;
-      width: 30vw;
+      width: 400px;
       position: relative;
+
+      @media screen and (max-width: 500px) {
+        width: 100%;
+      }
 
       & input {
         width: 100%;

@@ -4,6 +4,10 @@
     grid-template-columns: 2fr 2fr 3fr;
     gap: 5%;
 
+    @media screen and (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+
     &__card {
       border-bottom: 3px solid $primary-color;
       box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,

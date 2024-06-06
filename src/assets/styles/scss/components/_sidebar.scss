@@ -6,6 +6,17 @@
   position: fixed;
   left: 0;
   top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media screen and (max-width: 1000px) {
+    display: none;
+
+    &.draw {
+      display: flex;
+    }
+  }
 
   &__list {
     padding: 0;
@@ -25,5 +36,11 @@
         background-color: $secondary-color;
       }
     }
+  }
+
+  &__btn {
+    width: 150px;
+    margin: 0 auto;
+    margin-bottom: 20px;
   }
 }

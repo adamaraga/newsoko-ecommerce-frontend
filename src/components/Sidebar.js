@@ -1,6 +1,11 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { userLogOut } from "../context/Action";
+import { useContext } from "react";
+import { Context } from "../context/MainContext";
 
-const Sidebar = () => {
+const Sidebar = ({ drawer, setModalIsOpen }) => {
+  const { dispatch } = useContext(Context);
+  const navigate = useNavigate();
   const { pathname } = useLocation();
 
   const links = [
@@ -9,15 +14,20 @@ const Sidebar = () => {
     { name: "Products", url: "products" },
     { name: "Message", url: "message" },
   ];
-
+  const handleLogout = () => {
+    localStorage.removeItem("sokoUser");
+    dispatch(userLogOut());
+    navigate("/login");
+  };
   return (
-    <div className="sidebar">
+    <div className={drawer ? "sidebar draw" : "sidebar"}>
       <ul className="sidebar__list">
         {links.map((link) => {
           return (
             <Link
               key={link.name}
               to={link.url === "" ? "/dashboard" : "/dashboard/" + link.url}
+              onClick={() => drawer && setModalIsOpen(false)}
             >
               <li
                 className={
@@ -34,6 +44,10 @@ const Sidebar = () => {
           );
         })}
       </ul>
+
+      <button className="btn sidebar__btn" onClick={handleLogout}>
+        Logout
+      </button>
     </div>
   );
 };
