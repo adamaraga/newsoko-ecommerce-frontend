@@ -1,0 +1,20 @@
+.messageDB {
+  .messageDB__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    &__item {
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      border-radius: 5px;
+      padding: 20px;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+
+      & span {
+        font-weight: 600;
+      }
+    }
+  }
+}

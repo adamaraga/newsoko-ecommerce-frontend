@@ -161,6 +161,9 @@ const Checkout = () => {
                 ? (total + 1000).toFixed(2)
                 : (total + methodAmount).toFixed(2),
             orderNote,
+            shippingMethod:
+              country === "United States" ? methodAmount : "International",
+            shippingAmount: country === "United States" ? methodAmount : 1000,
           },
         };
         const res = await initPayment(data);

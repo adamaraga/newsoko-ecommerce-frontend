@@ -103,11 +103,8 @@ const Contact = () => {
               <br />
             </p>
             <p>
-              <a
-                style={{ color: "#337ab7" }}
-                href="mailto:info@dealsmarineparts.com"
-              >
-                info@dealsmarineparts.com
+              <a style={{ color: "#337ab7" }} href="mailto:info@newsoko.com">
+                info@newsoko.com
               </a>
             </p>
             <br />

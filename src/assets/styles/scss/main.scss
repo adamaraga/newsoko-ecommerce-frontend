@@ -6,6 +6,7 @@
 @import "abstracts/variable";
 
 @import "layouts/mainLayout";
+@import "layouts/dashboardLayout";
 
 @import "components/topbar";
 @import "components/hero";
@@ -17,6 +18,8 @@
 @import "components/cartModal";
 @import "components/paypalPayment";
 @import "components/drawer";
+@import "components/sidebar";
+@import "components/tableMenu";
 
 @import "pages/home";
 @import "pages/shop";
@@ -27,6 +30,11 @@
 @import "pages/cart";
 @import "pages/checkout";
 @import "pages/account";
+@import "pages/homeDB";
+@import "pages/messageDB";
+@import "pages/ordersDB";
+@import "pages/addProduct";
+
 @import "pages/notFound";
 
 *,
@@ -134,7 +142,7 @@ h6 {
 
 .modal-overlay {
   background: rgba(0, 0, 0, 0.3);
-  z-index: 3;
+  z-index: 50;
   position: fixed;
   top: 0;
   left: 0;
@@ -147,7 +155,7 @@ h6 {
 
 .modal-overlayAlt {
   background: rgba(0, 0, 0, 0.1);
-  z-index: 3;
+  z-index: 50;
   position: fixed;
   top: 0;
   left: 0;
@@ -160,7 +168,7 @@ h6 {
 
 .modal-overlayCenter {
   background: rgba(0, 0, 0, 0.5);
-  z-index: 3;
+  z-index: 50;
   position: fixed;
   top: 0;
   left: 0;

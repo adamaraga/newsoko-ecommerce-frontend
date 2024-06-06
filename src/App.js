@@ -25,6 +25,14 @@ import axios from "axios";
 import { useContext } from "react";
 import { Context } from "./context/MainContext";
 import { userLogOut } from "./context/Action";
+import DashboardLayout from "./layouts/DashboardLayout";
+import HomeDB from "./pages/HomeDB";
+import OrdersDB from "./pages/OrdersDB";
+import OrderItemDB from "./pages/OrderItemDB";
+import MessageDB from "./pages/MessageDB";
+import ProductsDB from "./pages/ProductsDB";
+import AddProduct from "./pages/AddProduct";
+import EditProduct from "./pages/EditProduct";
 
 function App() {
   const { user, dispatch } = useContext(Context);
@@ -71,6 +79,16 @@ function App() {
             <Route path="cart" element={<Cart />} />
             <Route path="checkout" element={<Checkout />} />
             <Route path="account" element={<Account />} />
+          </Route>
+
+          <Route path="/dashboard" element={<DashboardLayout />}>
+            <Route index element={<HomeDB />} />
+            <Route path="orders" element={<OrdersDB />} />
+            <Route path="orders/:id" element={<OrderItemDB />} />
+            <Route path="message" element={<MessageDB />} />
+            <Route path="products" element={<ProductsDB />} />
+            <Route path="products/add" element={<AddProduct />} />
+            <Route path="products/edit/:id" element={<EditProduct />} />
           </Route>
         </Routes>
       </Router>

@@ -101,6 +101,12 @@ const Account = () => {
                   style={{ width: "120px" }}
                   className="account__main__order__table__row__head"
                 >
+                  Order/Payment Id (Paypal)
+                </div>
+                <div
+                  style={{ width: "120px" }}
+                  className="account__main__order__table__row__head"
+                >
                   Payment Status
                 </div>
                 <div
@@ -137,8 +143,14 @@ const Account = () => {
                         className="account__main__order__table__row__data"
                       >
                         <div className="account__main__order__table__row__data__disc">
-                          <h4>{order?.createdAt.slice(0, 10)}</h4>
+                          <h4>{order?.createdAt?.slice(0, 10)}</h4>
                         </div>
+                      </div>
+                      <div
+                        style={{ width: "120px" }}
+                        className="account__main__order__table__row__data"
+                      >
+                        {order?.paymentId}
                       </div>
                       <div
                         style={{ width: "120px" }}
