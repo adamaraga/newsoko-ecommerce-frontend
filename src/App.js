@@ -33,6 +33,9 @@ import MessageDB from "./pages/MessageDB";
 import ProductsDB from "./pages/ProductsDB";
 import AddProduct from "./pages/AddProduct";
 import EditProduct from "./pages/EditProduct";
+import VerifyMail from "./pages/VerifyMail";
+import ForgetPassword from "./pages/ForgetPassword";
+import ResetPassword from "./pages/ResetPassword";
 
 function App() {
   const { user, dispatch } = useContext(Context);
@@ -75,6 +78,9 @@ function App() {
             <Route path="privacy-policy" element={<Privacy />} />
             <Route path="login" element={<Signin />} />
             <Route path="signup" element={<Signup />} />
+            <Route path="verify-mail/:token" element={<VerifyMail />} />
+            <Route path="forgot-password" element={<ForgetPassword />} />
+            <Route path="reset-password/:token" element={<ResetPassword />} />
             <Route path="contact-us" element={<Contact />} />
             <Route path="cart" element={<Cart />} />
             <Route path="checkout" element={<Checkout />} />

@@ -33,7 +33,7 @@ const Footer = () => {
             </div>
             <div className="footer__main__top__links__item">
               <img src={footerIcon2} alt="" />
-              <p>info@dealsmarineparts.com</p>
+              <p>info@newsoko.org</p>
             </div>
             <div className="footer__main__top__links__item">
               <img src={footerIcon3} alt="" />
@@ -58,7 +58,12 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer__right">
-        <p>Deals Marine Parts 2024 © All rights reserved</p>
+        <p>
+          News Oko Part 2024 -{" "}
+          <a style={{ color: "#07213e" }} href="http://www.lilysolutions.org/">
+            Powered by Lilysolutions limited
+          </a>
+        </p>
       </div>
     </footer>
   );

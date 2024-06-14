@@ -37,7 +37,7 @@ const CartModal = () => {
     <div className="cartModal">
       <div className="topbar__top__cartCon">
         <img src={cartIcon} alt="" onClick={() => setModalIsOpen(true)} />
-        <span>{cart ? cart.length : 0}</span>
+        <span>{cart ? cart?.length : 0}</span>
       </div>
 
       <Modal
@@ -56,7 +56,7 @@ const CartModal = () => {
             x
           </div>
 
-          {cart.length > 0 ? (
+          {cart?.length > 0 ? (
             <>
               <div className="cartModal__main__list">
                 {cart?.map((product) => {

@@ -3,13 +3,14 @@ import HeaderImg from "../components/HeaderImg";
 import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../context/MainContext";
 import { toast } from "react-toastify";
-import { userLoginSuccess } from "../context/Action";
 import { Input, Label } from "../components/styledComponent/formInputs";
 import { signup } from "../api/usersApi";
 import Loading from "../components/Loading";
+import mailIcon from "../assets/images/svg/mail.svg";
 
 const Signup = () => {
-  const { dispatch, user } = useContext(Context);
+  const { user } = useContext(Context);
+  const [step, setStep] = useState(1);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -64,12 +65,12 @@ const Signup = () => {
           firstName,
           lastName,
         };
-        const res = await signup(data);
+
+        await signup(data);
 
         setLoading(false);
-        dispatch(userLoginSuccess(res.data));
         toast.success("Signup successfully");
-        navigate("/account");
+        setStep(2);
       } catch (err) {
         setLoading(false);
         const message =
@@ -95,70 +96,83 @@ const Signup = () => {
     <div className="signin">
       <HeaderImg title="My Account" />
 
-      <div className="signin__wrapper">
-        <h2>Sign up</h2>
+      {step === 1 && (
+        <div className="signin__wrapper">
+          <h2>Sign up</h2>
 
-        <div className="signin__main">
-          <div className="signin__main__inputCon">
-            <Label htmlFor="firstname">
-              {" "}
-              First Name <span>*</span>
-            </Label>
-            <Input
-              id="firstname"
-              type="text"
-              error={inputError.firstName ? true : false}
-              onChange={(e) => setFirstName(e.target.value)}
-            />
-          </div>
-          <div className="signin__main__inputCon">
-            <Label htmlFor="lastname">
-              {" "}
-              Last Name <span>*</span>
-            </Label>
-            <Input
-              id="lastname"
-              type="text"
-              error={inputError.lastName ? true : false}
-              onChange={(e) => setLastName(e.target.value)}
-            />
-          </div>
-          <div className="signin__main__inputCon">
-            <Label htmlFor="email">
-              {" "}
-              Email address <span>*</span>
-            </Label>
-            <Input
-              id="email"
-              type="text"
-              error={inputError.email ? true : false}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="signin__main__inputCon">
-            <Label htmlFor="password">
-              {" "}
-              Password <span>*</span>
-            </Label>
-            <Input
-              id="password"
-              type="password"
-              error={inputError.password ? true : false}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
+          <div className="signin__main">
+            <div className="signin__main__inputCon">
+              <Label htmlFor="firstname">
+                {" "}
+                First Name <span>*</span>
+              </Label>
+              <Input
+                id="firstname"
+                type="text"
+                error={inputError.firstName ? true : false}
+                onChange={(e) => setFirstName(e.target.value)}
+              />
+            </div>
+            <div className="signin__main__inputCon">
+              <Label htmlFor="lastname">
+                {" "}
+                Last Name <span>*</span>
+              </Label>
+              <Input
+                id="lastname"
+                type="text"
+                error={inputError.lastName ? true : false}
+                onChange={(e) => setLastName(e.target.value)}
+              />
+            </div>
+            <div className="signin__main__inputCon">
+              <Label htmlFor="email">
+                {" "}
+                Email address <span>*</span>
+              </Label>
+              <Input
+                id="email"
+                type="text"
+                error={inputError.email ? true : false}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className="signin__main__inputCon">
+              <Label htmlFor="password">
+                {" "}
+                Password <span>*</span>
+              </Label>
+              <Input
+                id="password"
+                type="password"
+                error={inputError.password ? true : false}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
 
-          <button className="btn" onClick={handleSignup}>
-            {loading ? <Loading button={true} /> : "Sign up"}
-          </button>
+            <button className="btn" onClick={handleSignup}>
+              {loading ? <Loading button={true} /> : "Sign up"}
+            </button>
+            <p>
+              Already have an account{" "}
+              <Link style={{ color: "#337ab7" }} to="/login">
+                Login
+              </Link>
+            </p>
+          </div>
+        </div>
+      )}
+
+      {step === 2 && (
+        <div className="signin__wrapper">
+          <img src={mailIcon} alt="mail" style={{ width: 80 }} />
+          <h2>Verify Your Email Address</h2>
           <p>
-            Already have an account{" "}
-            <Link style={{ color: "#337ab7" }} to="/login">
-              Login
-            </Link>
+            An email has been sent to your inbox, follow the instructions to
+            Verify your email address and login.
           </p>
         </div>
-      </div>
+      )}
     </div>
   );
 };

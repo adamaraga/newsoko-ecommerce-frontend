@@ -38,6 +38,18 @@ export const signup = (data) => {
   return axios.post(`${apiURL}/auth/signup`, data);
 };
 
+export const verifyEmail = (token) => {
+  return axios.put(`${apiURL}/auth/email-verify/${token}`);
+};
+
+export const forgetPassword = (data) => {
+  return axios.post(`${apiURL}/auth/forget-password`, data);
+};
+
+export const resetPasswordFp = (data) => {
+  return axios.put(`${apiURL}/auth/reset-password-fp`, data);
+};
+
 export const initPayment = (data) => {
   return axios.post(`${apiURL}/order/add`, data);
 };

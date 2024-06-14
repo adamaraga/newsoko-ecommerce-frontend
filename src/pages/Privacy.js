@@ -12,7 +12,7 @@ const Privacy = () => {
 
       <div className="about__main">
         <p>
-          <b>Dealsmarineparts.com Privacy Policy</b>
+          <b>New Privacy Policy</b>
         </p>
         <p>
           <b>What information do we collect?</b>
@@ -187,12 +187,12 @@ const Privacy = () => {
           contact us using the information below.
         </p>
         <p>
-          <b>Deals Marine USA, LLC</b>
+          <b>Newsoko USA, LLC</b>
           <br />
           1218 Carolina Road <br />
           Suffolk, Virginia 23434 USA <br />
-          http://www.dealsmarineparts.com <br />
-          info@dealsmarineparts.com <br />
+          {/* http://www.dealsmarineparts.com <br /> */}
+          info@newsoko.org <br />
           (757) 391-4366 <br />
         </p>
       </div>

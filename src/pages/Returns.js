@@ -84,11 +84,11 @@ const Returns = () => {
           </li>
           <li>
             The manufacturer will inspect the product and make a warranty
-            approval if appropriate, then notify dealsmarineparts.com.
+            approval if appropriate, then notify Newsoko.
           </li>
           <li>
-            Dealsmarineparts.com will then refund your purchase price for the
-            item. Original and return shipping charges are non-refundable.
+            Newsoko will then refund your purchase price for the item. Original
+            and return shipping charges are non-refundable.
           </li>
         </ol>
 
@@ -99,8 +99,8 @@ const Returns = () => {
         </p>
         <p>
           <b>–Replacement: </b>
-          When available with customer’s approval Dealsmarineparts.com will
-          provide replacement for defective products.
+          When available with customer’s approval Newsoko will provide
+          replacement for defective products.
         </p>
 
         <p>

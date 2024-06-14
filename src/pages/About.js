@@ -12,9 +12,9 @@ const About = () => {
 
       <div className="about__main">
         <p>
-          Dealsmarineparts.com is a US based company. That specializes in high
-          quality new aftermarket products, remanufactured, and used inboard
-          outboard parts, and general marine products.
+          News Oko is a US based company. That specializes in high quality new
+          aftermarket products, remanufactured, and used inboard outboard parts,
+          and general marine products.
         </p>
       </div>
     </div>

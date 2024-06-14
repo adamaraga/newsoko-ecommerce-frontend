@@ -109,9 +109,9 @@ const Signin = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          {/* <Link to="/">
+          <Link to="/forgot-password">
             <span className="signin__main__lost">Lost your password?</span>
-          </Link> */}
+          </Link>
           <br />
 
           <button className="btn" onClick={handleLogin}>

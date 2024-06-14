@@ -39,7 +39,7 @@ const Cart = () => {
 
   useEffect(() => {
     setCartMain(cart);
-  }, [cart, cart.length]);
+  }, [cart, cart?.length]);
 
   useEffect(() => {
     if (cartMain) {

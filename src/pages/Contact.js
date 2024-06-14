@@ -91,7 +91,7 @@ const Contact = () => {
               <br />
             </p>
             <p>
-              Deals Marine USA, LLC <br />
+              Newsoko USA, LLC <br />
               1218 Carolina Road <br />
               Suffolk VA <br />
               23434
@@ -103,8 +103,8 @@ const Contact = () => {
               <br />
             </p>
             <p>
-              <a style={{ color: "#337ab7" }} href="mailto:info@newsoko.com">
-                info@newsoko.com
+              <a style={{ color: "#337ab7" }} href="mailto:info@newsoko.org">
+                info@newsoko.org
               </a>
             </p>
             <br />

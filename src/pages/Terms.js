@@ -9,17 +9,16 @@ const Terms = () => {
 
       <div className="about__main">
         <p>
-          <b> Dealsmarineparts.com Terms of Use</b>
+          <b> Newsoko Terms of Use</b>
         </p>
         <p>
           <b> Terms & Conditions</b>
         </p>
 
         <p>
-          The following are terms of a legal agreement between you and Deals
-          Marine USA, LLC. (“Dealsmarineparts.com”) and other
-          dealsmarineparts.com Network sites. By accessing, browsing and/or
-          using any of the sites in the dealsmarineparts.com Network , you
+          The following are terms of a legal agreement between you and NewSoko
+          USA, LLC. (“Newsoko”) and other Newsoko Network sites. By accessing,
+          browsing and/or using any of the sites in the Newsoko Network , you
           acknowledge that you have read, understood, and agree, to be bound by
           these terms and to comply with all applicable laws and regulations,
           including U.S. export and re-export control laws and regulations. If
@@ -27,12 +26,12 @@ const Terms = () => {
           provided on this Site is protected by law, including, but not limited
           to, United States Copyright Law and international treaties. This Site
           is controlled and operated by company from its offices within the
-          United States. Dealsmarineparts.com makes no representation that
-          materials in the Site are appropriate or available for use in other
-          locations, and access to them from territories where their contents
-          are illegal is prohibited. Those who choose to access this Site from
-          other locations do so at their own initiative and are responsible for
-          compliance with applicable local laws.
+          United States. Newsoko makes no representation that materials in the
+          Site are appropriate or available for use in other locations, and
+          access to them from territories where their contents are illegal is
+          prohibited. Those who choose to access this Site from other locations
+          do so at their own initiative and are responsible for compliance with
+          applicable local laws.
         </p>
         <p>
           Any claim relating to, and the use of, this Site and the materials
@@ -50,11 +49,11 @@ const Terms = () => {
           republished, downloaded, displayed, posted or transmitted in any form
           or by any means, including, but not limited to, electronic,
           mechanical, photocopying, recording, or otherwise, without the prior
-          written permission of dealsmarineparts.com and the copyright owner.
-          Permission is granted to display, copy, distribute and download the
-          materials on this Site for personal, non-commercial use only, provided
-          you do not modify the materials and that you retain all copyright and
-          other proprietary notices contained in the materials. This permission
+          written permission of Newsoko and the copyright owner. Permission is
+          granted to display, copy, distribute and download the materials on
+          this Site for personal, non-commercial use only, provided you do not
+          modify the materials and that you retain all copyright and other
+          proprietary notices contained in the materials. This permission
           terminates automatically if you breach any of these terms or
           conditions. Upon termination, you must immediately destroy any
           downloaded and printed materials. You also may not, without permission
@@ -70,17 +69,17 @@ const Terms = () => {
         <p>
           The trademarks, service marks, and logos (the “Trademarks”) used and
           displayed on this Site are registered and unregistered Trademarks of
-          dealsmarineparts.com and others. Nothing on this Site should be
-          construed as granting, by implication, estoppel, or otherwise, any
-          license or right to use any Trademark displayed on the Site, without
-          the written permission of the Trademark owner. Dealsmarineparts.com
-          aggressively enforces its intellectual property rights to the fullest
-          extent of the law. The name of Dealsmarineparts.com, or the company
-          logo may not be used in any way, including in advertising or publicity
-          pertaining to distribution of materials on this Site, without prior,
-          written permission. Dealsmarineparts.com prohibits use of the company
-          logo as a “hot” link to any company site unless establishment of such
-          a link is approved in advance by company in writing.
+          Newsoko and others. Nothing on this Site should be construed as
+          granting, by implication, estoppel, or otherwise, any license or right
+          to use any Trademark displayed on the Site, without the written
+          permission of the Trademark owner. Newsoko aggressively enforces its
+          intellectual property rights to the fullest extent of the law. The
+          name of Newsoko, or the company logo may not be used in any way,
+          including in advertising or publicity pertaining to distribution of
+          materials on this Site, without prior, written permission. Newsoko
+          prohibits use of the company logo as a “hot” link to any company site
+          unless establishment of such a link is approved in advance by company
+          in writing.
         </p>
 
         <p>
@@ -104,11 +103,10 @@ const Terms = () => {
         </p>
         <p>
           UNDER NO CIRCUMSTANCES, INCLUDING, BUT NOT LIMITED TO, NEGLIGENCE,
-          SHALL DEALSMARINEPARTS.COM BE LIABLE FOR ANY DIRECT, INDIRECT,
-          SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES, INCLUDING, BUT NOT
-          LIMITED TO, LOSS OF DATA OR PROFIT, ARISING OUT OF THE USE, OR THE
-          INABILITY TO USE, THE MATERIALS ON THIS SITE, EVEN IF
-          DEALSMARINEPARTS.COM OR A DEALSMARINEPARTS.COM AUTHORIZED
+          SHALL Newsoko BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL
+          OR CONSEQUENTIAL DAMAGES, INCLUDING, BUT NOT LIMITED TO, LOSS OF DATA
+          OR PROFIT, ARISING OUT OF THE USE, OR THE INABILITY TO USE, THE
+          MATERIALS ON THIS SITE, EVEN IF Newsoko OR A Newsoko AUTHORIZED
           REPRESENTATIVE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. IF
           YOUR USE OF MATERIALS FROM THIS SITE RESULTS IN THE NEED FOR
           SERVICING, REPAIR OR CORRECTION OF EQUIPMENT OR DATA, YOU ASSUME ANY
@@ -118,9 +116,9 @@ const Terms = () => {
         </p>
 
         <p>
-          DEALSMARINEPARTS.COM IS ONLY LIABLE TO THE EXTENT OF FULL REFUND PRICE
-          FOR THE ITEM PURCHASED, DEALSMARINEPARTS.COM IS NOT RESPONSIBLE FOR
-          ANY DAMAGES ATTRIBUTABLE TO PART FAILURE.
+          Newsoko IS ONLY LIABLE TO THE EXTENT OF FULL REFUND PRICE FOR THE ITEM
+          PURCHASED, Newsoko IS NOT RESPONSIBLE FOR ANY DAMAGES ATTRIBUTABLE TO
+          PART FAILURE.
         </p>
 
         <p>
@@ -135,30 +133,28 @@ const Terms = () => {
           disseminated or used by company or its affiliates for any purpose
           whatsoever, including, but not limited to, developing, manufacturing
           and marketing products. Notwithstanding the foregoing, all personal
-          data provided to Dealsmarineparts.com Online will be handled in
-          accordance with{" "}
-          <Link to="/privacy-policy">Dealsmarineparts.com Privacy Policy</Link>.
+          data provided to Newsoko Online will be handled in accordance with{" "}
+          <Link to="/privacy-policy">Newsoko Privacy Policy</Link>.
         </p>
 
         <p>
-          Dealsmarineparts.com retains the sole right to determine what will and
-          will not be posted or transmitted on its sites. You are prohibited
-          from posting or transmitting to or from this Site any unlawful,
-          threatening, libelous, defamatory, obscene, scandalous, inflammatory,
-          pornographic, or profane material, or any other material that could
-          give rise to any civil or criminal liability under the law and you
-          will be solely responsible and liable for those
-          postings/transmissions.
+          Newsoko retains the sole right to determine what will and will not be
+          posted or transmitted on its sites. You are prohibited from posting or
+          transmitting to or from this Site any unlawful, threatening, libelous,
+          defamatory, obscene, scandalous, inflammatory, pornographic, or
+          profane material, or any other material that could give rise to any
+          civil or criminal liability under the law and you will be solely
+          responsible and liable for those postings/transmissions.
         </p>
 
         <p>
           <b> Terms of Use Revisions</b>
         </p>
         <p>
-          Dealsmarineparts.com may at any time revise these Terms of Use by
-          updating this posting. By using this Site, you agree to be bound by
-          any such revisions and should therefore periodically visit this page
-          to determine the then current Terms of Use to which you are bound.
+          Newsoko may at any time revise these Terms of Use by updating this
+          posting. By using this Site, you agree to be bound by any such
+          revisions and should therefore periodically visit this page to
+          determine the then current Terms of Use to which you are bound.
         </p>
       </div>
     </div>

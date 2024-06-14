@@ -452,7 +452,7 @@ const Checkout = () => {
             </div>
           </div>
 
-          {cart.length > 0 && (
+          {cart?.length > 0 && (
             <PaypalPayment
               loading={loading}
               proceedPayment={proceedPayment}

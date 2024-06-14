@@ -41,7 +41,7 @@ const CartItem = ({
 
   useEffect(() => {
     setQuantity(product.quantity);
-  }, [product.quantity]);
+  }, [product?.quantity]);
 
   return (
     <div className="cart__main__product__item">

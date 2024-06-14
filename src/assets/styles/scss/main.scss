@@ -112,6 +112,23 @@ h6 {
   }
 }
 
+.btnAlt3 {
+  background: $secondary-color;
+  min-width: 220px;
+  height: 50px;
+  border: none;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 3.5px;
+
+  &:hover {
+    background: $primary-colorAlt;
+  }
+}
+
 .loadingCon {
   display: flex;
   align-items: center;

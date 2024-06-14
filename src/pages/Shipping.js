@@ -40,9 +40,8 @@ const Shipping = () => {
         <p>
           We sell and ship to customers worldwide; shipping is at buyer’s full
           expense. International buyers are responsible for compliance to import
-          laws, taxes, levies, and custom duties in their country.
-          Dealsmarineparts.com complies with US Export regulation & restriction
-          when applicable.
+          laws, taxes, levies, and custom duties in their country. Newsoko
+          complies with US Export regulation & restriction when applicable.
         </p>
       </div>
     </div>
