@@ -2,7 +2,7 @@ import paymentIcons from "../assets/images/PaymentIcons.png";
 import footerIcon1 from "../assets/images/svg/footerIcon1.svg";
 import footerIcon2 from "../assets/images/svg/footerIcon2.svg";
 import footerIcon3 from "../assets/images/svg/footerIcon3.svg";
-import logoIcon from "../assets/images/logo.jpeg";
+import logoIcon from "../assets/images/logo.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -20,7 +20,11 @@ const Footer = () => {
       <div className="footer__main">
         <div className="footer__main__top">
           <Link to="/">
-            <img src={logoIcon} alt="" className="footer__main__top__logo" />
+            <img
+              src={logoIcon}
+              alt=""
+              className="footer__main__top__logo logo"
+            />
           </Link>
           <div className="footer__main__top__links">
             <div className="footer__main__top__links__item">

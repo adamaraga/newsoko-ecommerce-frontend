@@ -76,14 +76,7 @@ const ProductItemCard = ({ product }) => {
   return (
     <div className="featured__main__products__item">
       <div className="featured__main__products__item__imgCon">
-        <img
-          src={
-            product.img
-              ? process.env.REACT_APP_API_URL + "/" + product.img
-              : placeholder
-          }
-          alt=""
-        />
+        <img src={product.img ? product.img : placeholder} alt="" />
 
         {product.stock === 0 && <p>OUT OF STOCK</p>}
       </div>

@@ -66,11 +66,7 @@ const CartModal = () => {
                       className="cartModal__main__list__item"
                     >
                       <img
-                        src={
-                          product.img
-                            ? process.env.REACT_APP_API_URL + "/" + product.img
-                            : placeholder
-                        }
+                        src={product.img ? product.img : placeholder}
                         alt=""
                         className="cartModal__main__list__item__img"
                       />

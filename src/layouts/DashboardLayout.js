@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { Context } from "../context/MainContext";
 import { useNavigate, Outlet, Link } from "react-router-dom";
-import logoIcon from "../assets/images/logo.jpeg";
+import logoIcon from "../assets/images/logo.png";
 import Sidebar from "../components/Sidebar";
 import DrawerDB from "../components/DrawerDB";
 
@@ -25,7 +25,7 @@ const DashboardLayout = () => {
           <img
             src={logoIcon}
             alt=""
-            className="dashboardLayout__topbar__logo"
+            className="dashboardLayout__topbar__logo logo"
           />
         </Link>
 

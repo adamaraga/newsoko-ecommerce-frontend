@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import searchIcon from "../assets/images/svg/search.svg";
 import profileIcon from "../assets/images/svg/profile.svg";
-import logoIcon from "../assets/images/logo.jpeg";
+import logoIcon from "../assets/images/logo.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import HoverMenu from "./HoverMenu";
 import CartModal from "./CartModal";
@@ -116,7 +116,7 @@ const TopBar = () => {
     <nav className="topbar">
       <div className="topbar__top">
         <Link to="/">
-          <img src={logoIcon} alt="" className="topbar__top__logo" />
+          <img src={logoIcon} alt="" className="topbar__top__logo logo" />
         </Link>
 
         <div className="topbar__top__left">

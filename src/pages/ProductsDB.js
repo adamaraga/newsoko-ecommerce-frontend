@@ -184,11 +184,7 @@ const ProductsDB = () => {
                   >
                     <img
                       style={{ height: 50 }}
-                      src={
-                        product?.img
-                          ? process.env.REACT_APP_API_URL + "/" + product.img
-                          : placeholder
-                      }
+                      src={product?.img ? product?.img : placeholder}
                       alt=""
                     />
                   </div>

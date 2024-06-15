@@ -48,7 +48,9 @@ const Product = () => {
       toast.success("Added to cart");
     } else {
       let cartToUpdate = cart;
-      const index = cartToUpdate.findIndex((item) => item._id === product._id);
+      const index = cartToUpdate.findIndex(
+        (item) => item?._id === product?._id
+      );
       if (index >= 0) {
         if (cartToUpdate[index].quantity < cartToUpdate[index].stock) {
           if (
@@ -130,7 +132,7 @@ const Product = () => {
   useEffect(() => {
     if (products) {
       const newRelatedProducts = products?.products?.filter(
-        (currProduct) => currProduct._id !== product._id
+        (currProduct) => currProduct?._id !== product?._id
       );
       newRelatedProducts.splice(4);
 
@@ -150,14 +152,7 @@ const Product = () => {
         <>
           <div className="product__main">
             <div className="product__main__imgCon">
-              <img
-                src={
-                  product?.img
-                    ? process.env.REACT_APP_API_URL + "/" + product.img
-                    : placeholder
-                }
-                alt=""
-              />
+              <img src={product?.img ? product?.img : placeholder} alt="" />
             </div>
 
             <div className="product__main__right">
@@ -217,7 +212,7 @@ const Product = () => {
                       : "product__info__header__item"
                   }
                 >
-                  Additional informatio
+                  Additional information
                 </div>
               )}
               {/* <div className="product__info__header__item">Review()</div> */}

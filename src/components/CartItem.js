@@ -59,14 +59,7 @@ const CartItem = ({
       </div>
       <div className="cart__main__product__item__part">
         <b>Image:</b>{" "}
-        <img
-          src={
-            product.img
-              ? process.env.REACT_APP_API_URL + "/" + product.img
-              : placeholder
-          }
-          alt=""
-        />
+        <img src={product.img ? product.img : placeholder} alt="" />
       </div>
       <div className="cart__main__product__item__part">
         <b>Price:</b> {product?.price.toLocaleString("en-US", formattingOption)}

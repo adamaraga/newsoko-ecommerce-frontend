@@ -104,17 +104,18 @@ const AddProduct = () => {
       setInputError({});
       setLoading(true);
 
-      let data = new FormData();
-      data.append("name", name);
-      data.append("uploadedFile", img);
-      data.append("price", price);
-      data.append("discription", discription);
-      data.append("oldPrice", oldPrice);
-      data.append("stock", stock);
-      data.append("category", category);
-      data.append("weight", weight);
-      data.append("bestSeller", bestSeller);
-      data.append("wholeSale", wholeSale);
+      let data = {
+        name,
+        discription,
+        price,
+        oldPrice,
+        category,
+        stock,
+        weight,
+        bestSeller,
+        wholeSale,
+        img,
+      };
 
       try {
         await addProduct(data, user?.accessToken);
@@ -142,6 +143,25 @@ const AddProduct = () => {
     }
   };
 
+  const convertToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
+  const handleFileUpload = async (e) => {
+    const file = e.target.files[0];
+    const base64 = await convertToBase64(file);
+    setimg(base64);
+  };
+
   return (
     <div className="addProduct">
       <h2>Add Product</h2>
@@ -150,7 +170,7 @@ const AddProduct = () => {
         <div className="addProduct__form__item">
           <Label htmlFor="street">Image</Label>
           <br />
-          <input type="file" onChange={(e) => setimg(e.target.files[0])} />
+          <input type="file" onChange={(e) => handleFileUpload(e)} />
         </div>
         <br />
         <div className="addProduct__form__item">
