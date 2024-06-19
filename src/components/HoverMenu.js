@@ -3,7 +3,7 @@ import { ControlledMenu, MenuItem, useHover } from "@szhsin/react-menu";
 import arrowdownIcon from "../assets/images/svg/arrowdown.svg";
 import { Link } from "react-router-dom";
 
-const HoverMenu = ({ links, drawer }) => {
+const HoverMenu = ({ links, drawer, setModalIsOpen }) => {
   const ref = useRef(null);
   const [isOpen, setOpen] = useState(false);
   const { anchorProps, hoverProps } = useHover(isOpen, setOpen);
@@ -30,7 +30,9 @@ const HoverMenu = ({ links, drawer }) => {
         {links.subLinks.map((link, i) => {
           return (
             <Link key={i} to={link.link}>
-              <MenuItem>{link.name}</MenuItem>{" "}
+              <MenuItem onClick={() => drawer && setModalIsOpen(false)}>
+                {link.name}
+              </MenuItem>
             </Link>
           );
         })}

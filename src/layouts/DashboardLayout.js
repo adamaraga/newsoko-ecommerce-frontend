@@ -14,7 +14,7 @@ const DashboardLayout = () => {
       navigate("/login");
     }
     if (user?.roles === "user") {
-      navigate("/dashboard");
+      navigate("/");
     }
   }, [user, navigate]);
 

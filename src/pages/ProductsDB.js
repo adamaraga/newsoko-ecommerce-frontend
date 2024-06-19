@@ -20,7 +20,7 @@ const ProductsDB = () => {
 
   const formattingOption = {
     style: "currency",
-    currency: "USD",
+    currency: "NGN",
     minimumFractionDigits: 2,
   };
 
@@ -199,7 +199,7 @@ const ProductsDB = () => {
                     style={{ width: "120px" }}
                     className="homeDB__users__table__row__data"
                   >
-                    {product?.price?.toLocaleString("en-US", formattingOption)}
+                    {product?.price?.toLocaleString("en-NG", formattingOption)}
                   </div>
                   <div
                     style={{ width: "150px" }}

@@ -17,7 +17,7 @@ const OrdersDB = () => {
 
   const formattingOption = {
     style: "currency",
-    currency: "USD",
+    currency: "NGN",
     minimumFractionDigits: 2,
   };
 
@@ -191,7 +191,7 @@ const OrdersDB = () => {
                     style={{ width: "150px" }}
                     className="homeDB__users__table__row__data"
                   >
-                    {order?.bill?.toLocaleString("en-US", formattingOption)}
+                    {order?.bill?.toLocaleString("en-NG", formattingOption)}
                   </div>
                   <div
                     style={{ width: "100px" }}

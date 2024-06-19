@@ -1,5 +1,5 @@
 import paymentIcons from "../assets/images/PaymentIcons.png";
-import footerIcon1 from "../assets/images/svg/footerIcon1.svg";
+// import footerIcon1 from "../assets/images/svg/footerIcon1.svg";
 import footerIcon2 from "../assets/images/svg/footerIcon2.svg";
 import footerIcon3 from "../assets/images/svg/footerIcon3.svg";
 import logoIcon from "../assets/images/logo.png";
@@ -27,21 +27,21 @@ const Footer = () => {
             />
           </Link>
           <div className="footer__main__top__links">
-            <div className="footer__main__top__links__item">
+            {/* <div className="footer__main__top__links__item">
               <img src={footerIcon1} alt="" />
               <p>Toll free: +1(800)211-0479</p>
             </div>
             <div className="footer__main__top__links__item">
               <img src={footerIcon1} alt="" />
               <p>Local: +1(757)391-4366</p>
-            </div>
+            </div> */}
             <div className="footer__main__top__links__item">
               <img src={footerIcon2} alt="" />
               <p>info@newsoko.org</p>
             </div>
             <div className="footer__main__top__links__item">
               <img src={footerIcon3} alt="" />
-              <p>1218 Carolina Road Suffolk VA 23434</p>
+              <p>22a Olubi Str,Isolo Mushin Lagos Nigeria</p>
             </div>
           </div>
         </div>

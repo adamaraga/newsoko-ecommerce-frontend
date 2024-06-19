@@ -32,18 +32,20 @@ const Drawer = ({ links }) => {
           >
             x
           </div>
-          <ul
-            className="drawer__modal__list"
-            onClick={() => setModalIsOpen(false)}
-          >
+          <ul className="drawer__modal__list">
             {links.map((link, i) => {
               return (
                 <div key={i}>
                   {link.dropDown ? (
-                    <HoverMenu links={link} drawer={true} />
+                    <HoverMenu
+                      links={link}
+                      drawer={true}
+                      setModalIsOpen={setModalIsOpen}
+                    />
                   ) : (
                     <Link to={link.link}>
                       <li
+                        onClick={() => setModalIsOpen(false)}
                         className={
                           pathname === link.link
                             ? "drawer__modal__list__item active"

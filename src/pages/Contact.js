@@ -91,10 +91,10 @@ const Contact = () => {
               <br />
             </p>
             <p>
-              Newsoko USA, LLC <br />
-              1218 Carolina Road <br />
-              Suffolk VA <br />
-              23434
+              Newsoko Nigeria, <br />
+              Isolo Mushin Lagos <br />
+              Olubi Str, <br />
+              22a
             </p>
             <br />
 
@@ -109,17 +109,17 @@ const Contact = () => {
             </p>
             <br />
 
-            <p>
+            {/* <p>
               <b>Telephone:</b>
-            </p>
-            <p>
+            </p> */}
+            {/* <p>
               <b>Toll free:</b>
               +1(800)211-0479
             </p>
             <p>
               <b>Local:</b>
               +1(757)391-4366
-            </p>
+            </p> */}
           </div>
           <div className="contact__right">
             <div className="">

@@ -187,13 +187,13 @@ const Privacy = () => {
           contact us using the information below.
         </p>
         <p>
-          <b>Newsoko USA, LLC</b>
+          <b>Newsoko Nigeria,</b>
           <br />
-          1218 Carolina Road <br />
-          Suffolk, Virginia 23434 USA <br />
+          Isolo Mushin Lagos <br />
+          22a Olubi Str <br />
           {/* http://www.dealsmarineparts.com <br /> */}
           info@newsoko.org <br />
-          (757) 391-4366 <br />
+          {/* (757) 391-4366 <br /> */}
         </p>
       </div>
     </div>

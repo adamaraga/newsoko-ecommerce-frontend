@@ -13,7 +13,7 @@ const CartModal = () => {
 
   const formattingOption = {
     style: "currency",
-    currency: "USD",
+    currency: "NGN",
     minimumFractionDigits: 2,
   };
 
@@ -76,7 +76,7 @@ const CartModal = () => {
                           {product.name} <br /> <br />
                           {product.quantity} x{" "}
                           {product.price.toLocaleString(
-                            "en-US",
+                            "en-NG",
                             formattingOption
                           )}
                         </p>
@@ -93,7 +93,7 @@ const CartModal = () => {
               </div>
 
               <div className="cartModal__main__subtotal">
-                Subtotal: {total.toLocaleString("en-US", formattingOption)}
+                Subtotal: {total.toLocaleString("en-NG", formattingOption)}
               </div>
 
               <div

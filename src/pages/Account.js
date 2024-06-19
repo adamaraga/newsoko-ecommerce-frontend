@@ -15,7 +15,7 @@ const Account = () => {
 
   const formattingOption = {
     style: "currency",
-    currency: "USD",
+    currency: "NGN",
     minimumFractionDigits: 2,
   };
 
@@ -170,7 +170,7 @@ const Account = () => {
                         style={{ width: "100px" }}
                         className="account__main__order__table__row__data"
                       >
-                        {order?.bill.toLocaleString("en-US", formattingOption)}
+                        {order?.bill.toLocaleString("en-NG", formattingOption)}
                       </div>
                     </div>
                   );

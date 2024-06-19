@@ -112,7 +112,7 @@ const Checkout = () => {
 
   const formattingOption = {
     style: "currency",
-    currency: "USD",
+    currency: "NGN",
     minimumFractionDigits: 2,
   };
 
@@ -368,7 +368,7 @@ const Checkout = () => {
                     {product?.name} <b>× {product?.quantity}</b>{" "}
                   </span>
                   {(product?.price * product?.quantity).toLocaleString(
-                    "en-US",
+                    "en-NG",
                     formattingOption
                   )}
                 </div>
@@ -377,7 +377,7 @@ const Checkout = () => {
 
             <div className="cart__main__total__part">
               <b>Subtotal</b>
-              <b>{total.toLocaleString("en-US", formattingOption)}</b>
+              <b>{total.toLocaleString("en-NG", formattingOption)}</b>
             </div>
             <div className="cart__main__total__part">
               <b>Shipping</b>
@@ -396,7 +396,7 @@ const Checkout = () => {
                           setMethodAmount(35);
                         }}
                       />{" "}
-                      <label htmlFor="fedex">Fedex Ground : $35.00</label>
+                      <label htmlFor="fedex">Fedex Ground : ₦35.00</label>
                     </div>
                     <div className="cart__main__total__part__inputs__item">
                       <input
@@ -410,7 +410,7 @@ const Checkout = () => {
                           setMethodAmount(149);
                         }}
                       />{" "}
-                      <label htmlFor="freight">Freight : $149.00</label>
+                      <label htmlFor="freight">Freight : ₦149.00</label>
                     </div>
                     <div className="cart__main__total__part__inputs__item">
                       <input
@@ -425,14 +425,14 @@ const Checkout = () => {
                         }}
                       />{" "}
                       <label htmlFor="outboard">
-                        Freight outboards : $425.00
+                        Freight outboards : ₦425.00
                       </label>
                     </div>
                   </>
                 ) : (
                   <b style={{ textAlign: "end" }}>
                     International Flat Rate: <br />
-                    {(1000).toLocaleString("en-US", formattingOption)}
+                    {(1000).toLocaleString("en-NG", formattingOption)}
                   </b>
                 )}
               </div>
@@ -443,9 +443,9 @@ const Checkout = () => {
 
               <b>
                 {country !== "United States"
-                  ? (total + 1000).toLocaleString("en-US", formattingOption)
+                  ? (total + 1000).toLocaleString("en-NG", formattingOption)
                   : (total + methodAmount).toLocaleString(
-                      "en-US",
+                      "en-NG",
                       formattingOption
                     )}
               </b>

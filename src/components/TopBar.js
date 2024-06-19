@@ -36,6 +36,18 @@ const TopBar = () => {
           name: "Yamaha Outboard Parts",
           link: "/products/yamaha-outboard-parts",
         },
+        {
+          name: "Yamaha Complete Engine",
+          link: "/products/yamaha-complete-engine",
+        },
+        {
+          name: "Yamaha New parts",
+          link: "/products/yamaha-new-parts",
+        },
+        {
+          name: "Yamaha Used Parts",
+          link: "/products/yamaha-used-parts",
+        },
       ],
     },
     {
@@ -51,6 +63,18 @@ const TopBar = () => {
           name: "suzuki Outboard Parts",
           link: "/products/suzuki-outboard-parts",
         },
+        {
+          name: "suzuki Complete Engine",
+          link: "/products/suzuki-complete-engine",
+        },
+        {
+          name: "suzuki New parts",
+          link: "/products/suzuki-new-parts",
+        },
+        {
+          name: "suzuki Used Parts",
+          link: "/products/suzuki-used-parts",
+        },
       ],
     },
     {
@@ -65,6 +89,18 @@ const TopBar = () => {
         {
           name: "mecury Outboard Parts",
           link: "/products/mecury-outboard-parts",
+        },
+        {
+          name: "mecury Complete Engine",
+          link: "/products/mecury-complete-engine",
+        },
+        {
+          name: "mecury New parts",
+          link: "/products/mecury-new-parts",
+        },
+        {
+          name: "mecury Used Parts",
+          link: "/products/mecury-used-parts",
         },
       ],
     },
@@ -88,6 +124,44 @@ const TopBar = () => {
       ],
     },
     {
+      name: "Volvo Penta",
+      link: "/products",
+      dropDown: true,
+      subLinks: [
+        {
+          name: "Volvo Penta Complete Engine",
+          link: "/products/volvo-penta-complete-engine",
+        },
+        {
+          name: "Volvo Penta New parts",
+          link: "/products/volvo-penta-new-parts",
+        },
+        {
+          name: "Volvo Penta Used Parts",
+          link: "/products/volvo-penta-used-parts",
+        },
+      ],
+    },
+    {
+      name: "OMC",
+      link: "/products",
+      dropDown: true,
+      subLinks: [
+        {
+          name: "OMC Complete Engine",
+          link: "/products/omc-complete-engine",
+        },
+        {
+          name: "OMC New parts",
+          link: "/products/omc-new-parts",
+        },
+        {
+          name: "OMC Used Parts",
+          link: "/products/omc-used-parts",
+        },
+      ],
+    },
+    {
       name: "nissan",
       link: "/products/nissan",
     },
@@ -102,6 +176,64 @@ const TopBar = () => {
     {
       name: "accessories",
       link: "/products/accessories",
+      dropDown: true,
+      subLinks: [
+        {
+          name: "Hose",
+          link: "/products/accessories-Hose",
+        },
+        {
+          name: "Pump",
+          link: "/products/accessories-pump",
+        },
+        {
+          name: "Anchors",
+          link: "/products/accessories-anchors",
+        },
+        {
+          name: "Lift Vest",
+          link: "/products/accessories-lift-vest",
+        },
+        {
+          name: "Steering",
+          link: "/products/accessories-steering",
+        },
+        {
+          name: "Baits & Tackles",
+          link: "/products/accessories-baits-&-tackles",
+        },
+        {
+          name: "Fishing Rods",
+          link: "/products/accessories-fishing-rods",
+        },
+      ],
+    },
+    {
+      name: "Propellers",
+      link: "/products/propellers",
+    },
+    {
+      name: "Jetski",
+      link: "/products/jetski",
+    },
+    {
+      name: "Boats 4 sale ",
+      link: "/products/boats-4-sale ",
+    },
+    {
+      name: "Books/Publications",
+      link: "/products",
+      dropDown: true,
+      subLinks: [
+        {
+          name: "Manuals",
+          link: "/products/books-publications-manuals",
+        },
+        {
+          name: "Used books",
+          link: "/products/books-publications-used-books",
+        },
+      ],
     },
   ];
 

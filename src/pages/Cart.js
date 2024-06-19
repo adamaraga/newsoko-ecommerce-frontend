@@ -17,7 +17,7 @@ const Cart = () => {
 
   const formattingOption = {
     style: "currency",
-    currency: "USD",
+    currency: "NGN",
     minimumFractionDigits: 2,
   };
 
@@ -81,14 +81,14 @@ const Cart = () => {
           <h2 className="cart__main__total__title">Cart totals</h2>
           <div className="cart__main__total">
             <div className="cart__main__total__part">
-              <b>Subtotal:</b> {total.toLocaleString("en-US", formattingOption)}
+              <b>Subtotal:</b> {total.toLocaleString("en-NG", formattingOption)}
             </div>
             <div className="cart__main__total__part shipping">
               <b>Shipping:</b>{" "}
               <div className="cart__main__total__part__inputs">
                 {country !== "United States" && (
                   <div className="cart__main__total__part__inputs__item">
-                    International Flat Rate: $1,000.00
+                    International Flat Rate: ₦1,000.00
                   </div>
                 )}
 
@@ -106,7 +106,7 @@ const Cart = () => {
                           setMethodAmount(35);
                         }}
                       />{" "}
-                      <label htmlFor="fedex">Fedex Ground : $35.00</label>
+                      <label htmlFor="fedex">Fedex Ground : ₦35.00</label>
                     </div>
                     <div className="cart__main__total__part__inputs__item">
                       <input
@@ -120,7 +120,7 @@ const Cart = () => {
                           setMethodAmount(149);
                         }}
                       />{" "}
-                      <label htmlFor="freight">Freight : $149.00</label>
+                      <label htmlFor="freight">Freight : ₦149.00</label>
                     </div>
                     <div className="cart__main__total__part__inputs__item">
                       <input
@@ -135,7 +135,7 @@ const Cart = () => {
                         }}
                       />{" "}
                       <label htmlFor="outboard">
-                        Freight outboards : $425.00
+                        Freight outboards : ₦425.00
                       </label>
                     </div>
                   </>
@@ -168,9 +168,9 @@ const Cart = () => {
             <div className="cart__main__total__part">
               <b>Total:</b>{" "}
               {country !== "United States"
-                ? (total + 1000).toLocaleString("en-US", formattingOption)
+                ? (total + 1000).toLocaleString("en-NG", formattingOption)
                 : (total + methodAmount).toLocaleString(
-                    "en-US",
+                    "en-NG",
                     formattingOption
                   )}
             </div>

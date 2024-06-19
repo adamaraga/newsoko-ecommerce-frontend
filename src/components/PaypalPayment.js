@@ -59,7 +59,7 @@ const PaypalPayment = ({ loading, proceedPayment, handleInitPayment }) => {
               options={{
                 clientId: process.env.REACT_APP_PAYPAL_CLIENT_ID,
                 components: "buttons",
-                currency: "USD",
+                currency: "NGN",
               }}
             >
               <PayPalButtons

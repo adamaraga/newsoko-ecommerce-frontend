@@ -12,7 +12,7 @@ const OrderItemDB = () => {
 
   const formattingOption = {
     style: "currency",
-    currency: "USD",
+    currency: "NGN",
     minimumFractionDigits: 2,
   };
 
@@ -62,7 +62,7 @@ const OrderItemDB = () => {
                       {product?.name} <b>× {product?.quantity}</b>{" "}
                     </span>
                     {(product?.price * product?.quantity).toLocaleString(
-                      "en-US",
+                      "en-NG",
                       formattingOption
                     )}
                   </div>
@@ -96,14 +96,14 @@ const OrderItemDB = () => {
               <div className="cart__main__total__part">
                 <b>Shipping Amount</b>
                 {order?.shippingAmount?.toLocaleString(
-                  "en-US",
+                  "en-NG",
                   formattingOption
                 )}
               </div>
 
               <div className="cart__main__total__part">
                 <b>Total</b>
-                <b>{order?.bill?.toLocaleString("en-US", formattingOption)}</b>
+                <b>{order?.bill?.toLocaleString("en-NG", formattingOption)}</b>
               </div>
             </div>
           </div>

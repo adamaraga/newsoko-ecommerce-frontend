@@ -25,7 +25,7 @@ const Product = () => {
 
   const formattingOption = {
     style: "currency",
-    currency: "USD",
+    currency: "NGN",
     minimumFractionDigits: 2,
   };
 
@@ -162,10 +162,10 @@ const Product = () => {
 
               <div className="product__main__right__price">
                 <span>
-                  {product?.oldPrice?.toLocaleString("en-US", formattingOption)}
+                  {product?.oldPrice?.toLocaleString("en-NG", formattingOption)}
                 </span>
                 <p>
-                  {product?.price?.toLocaleString("en-US", formattingOption)}
+                  {product?.price?.toLocaleString("en-NG", formattingOption)}
                 </p>
               </div>
 

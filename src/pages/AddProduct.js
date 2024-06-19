@@ -1,9 +1,10 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Input, Label, Select } from "../components/styledComponent/formInputs";
 import { Context } from "../context/MainContext";
 import { addProduct } from "../api/adminApi";
 import { toast } from "react-toastify";
 import Loading from "../components/Loading";
+import { links } from "./Shop";
 
 const AddProduct = () => {
   const { user } = useContext(Context);
@@ -19,27 +20,28 @@ const AddProduct = () => {
   const [bestSeller, setbestSeller] = useState(false);
   const [wholeSale, setwholeSale] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [categories, setCategories] = useState([]);
 
-  const categories = [
-    "Evinrude Outboard Motor",
-    "Evinrude Outboard Parts",
-    "Honda Outboard Motor",
-    "Honda Outboard Parts",
-    "Johnson",
-    "Marine Electronics",
-    "Mecury Outboard Engine",
-    "Mecury Outboard Parts",
-    "Nissan",
-    "Others",
-    "Suzuki Outboard Motor",
-    "Suzuki Outboard Parts",
-    "Tools",
-    "Trim n Tilt Repars",
-    "Uncategorised",
-    "Wholesale Lots",
-    "Yamaha Outboard Motor",
-    "Yamaha Outboard Parts",
-  ];
+  // const categories = [
+  //   "Evinrude Outboard Motor",
+  //   "Evinrude Outboard Parts",
+  //   "Honda Outboard Motor",
+  //   "Honda Outboard Parts",
+  //   "Johnson",
+  //   "Marine Electronics",
+  //   "Mecury Outboard Engine",
+  //   "Mecury Outboard Parts",
+  //   "Nissan",
+  //   "Others",
+  //   "Suzuki Outboard Motor",
+  //   "Suzuki Outboard Parts",
+  //   "Tools",
+  //   "Trim n Tilt Repars",
+  //   "Uncategorised",
+  //   "Wholesale Lots",
+  //   "Yamaha Outboard Motor",
+  //   "Yamaha Outboard Parts",
+  // ];
 
   const validate = () => {
     let nameError = "";
@@ -161,6 +163,24 @@ const AddProduct = () => {
     const base64 = await convertToBase64(file);
     setimg(base64);
   };
+
+  useEffect(() => {
+    if (links.length > 0) {
+      const newCat = links.map((link) => {
+        const words = link.url?.split("-");
+
+        for (let i = 0; i < words.length; i++) {
+          words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+        }
+
+        const category = words.join(" ");
+
+        return category;
+      });
+
+      setCategories(newCat);
+    }
+  }, []);
 
   return (
     <div className="addProduct">

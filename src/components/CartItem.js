@@ -14,7 +14,7 @@ const CartItem = ({
 
   const formattingOption = {
     style: "currency",
-    currency: "USD",
+    currency: "NGN",
     minimumFractionDigits: 2,
   };
 
@@ -62,7 +62,7 @@ const CartItem = ({
         <img src={product.img ? product.img : placeholder} alt="" />
       </div>
       <div className="cart__main__product__item__part">
-        <b>Price:</b> {product?.price.toLocaleString("en-US", formattingOption)}
+        <b>Price:</b> {product?.price.toLocaleString("en-NG", formattingOption)}
       </div>
       <div className="cart__main__product__item__part">
         <b>Stock:</b> {product?.stock}
@@ -78,7 +78,7 @@ const CartItem = ({
 
       <div className="cart__main__product__item__part">
         <b>Subtotal:</b>{" "}
-        {(product?.price * quantity).toLocaleString("en-US", formattingOption)}
+        {(product?.price * quantity).toLocaleString("en-NG", formattingOption)}
       </div>
     </div>
   );

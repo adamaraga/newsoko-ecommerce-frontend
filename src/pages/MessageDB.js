@@ -40,8 +40,6 @@ const MessageDB = () => {
     handleFetchMessage();
   }, [user?.id, page, user?.accessToken]);
 
-  console.log("messages", messages);
-
   return (
     <div className="messageDB">
       {loading ? (

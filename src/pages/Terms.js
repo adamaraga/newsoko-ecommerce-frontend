@@ -17,21 +17,21 @@ const Terms = () => {
 
         <p>
           The following are terms of a legal agreement between you and NewSoko
-          USA, LLC. (“Newsoko”) and other Newsoko Network sites. By accessing,
-          browsing and/or using any of the sites in the Newsoko Network , you
-          acknowledge that you have read, understood, and agree, to be bound by
-          these terms and to comply with all applicable laws and regulations,
-          including U.S. export and re-export control laws and regulations. If
-          you do not agree to these terms, do not use this Site. The material
-          provided on this Site is protected by law, including, but not limited
-          to, United States Copyright Law and international treaties. This Site
-          is controlled and operated by company from its offices within the
-          United States. Newsoko makes no representation that materials in the
-          Site are appropriate or available for use in other locations, and
-          access to them from territories where their contents are illegal is
-          prohibited. Those who choose to access this Site from other locations
-          do so at their own initiative and are responsible for compliance with
-          applicable local laws.
+          Nigeria, LLC. (“Newsoko”) and other Newsoko Network sites. By
+          accessing, browsing and/or using any of the sites in the Newsoko
+          Network , you acknowledge that you have read, understood, and agree,
+          to be bound by these terms and to comply with all applicable laws and
+          regulations, including U.S. export and re-export control laws and
+          regulations. If you do not agree to these terms, do not use this Site.
+          The material provided on this Site is protected by law, including, but
+          not limited to, United States Copyright Law and international
+          treaties. This Site is controlled and operated by company from its
+          offices within the United States. Newsoko makes no representation that
+          materials in the Site are appropriate or available for use in other
+          locations, and access to them from territories where their contents
+          are illegal is prohibited. Those who choose to access this Site from
+          other locations do so at their own initiative and are responsible for
+          compliance with applicable local laws.
         </p>
         <p>
           Any claim relating to, and the use of, this Site and the materials

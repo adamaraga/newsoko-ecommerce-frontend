@@ -10,7 +10,7 @@ const ProductItemCard = ({ product }) => {
 
   const formattingOption = {
     style: "currency",
-    currency: "USD",
+    currency: "NGN",
     minimumFractionDigits: 2,
   };
 
@@ -87,10 +87,10 @@ const ProductItemCard = ({ product }) => {
       <div className="featured__main__products__item__price">
         {product.oldPrice && (
           <span>
-            {product?.oldPrice.toLocaleString("en-US", formattingOption)}
+            {product?.oldPrice.toLocaleString("en-NG", formattingOption)}
           </span>
         )}
-        <p>{product?.price.toLocaleString("en-US", formattingOption)}</p>
+        <p>{product?.price.toLocaleString("en-NG", formattingOption)}</p>
       </div>
 
       {product.stock === 0 ? (
