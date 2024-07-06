@@ -248,7 +248,7 @@ const TopBar = () => {
     <nav className="topbar">
       <div className="topbar__top">
         <Link to="/">
-          <img src={logoIcon} alt="" className="topbar__top__logo logo" />
+          <img src={logoIcon} alt="" className="topbar__top__logo" />
         </Link>
 
         <div className="topbar__top__left">

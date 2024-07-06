@@ -25,7 +25,7 @@ const DashboardLayout = () => {
           <img
             src={logoIcon}
             alt=""
-            className="dashboardLayout__topbar__logo logo"
+            className="dashboardLayout__topbar__logo"
           />
         </Link>
 

@@ -192,7 +192,7 @@ const Privacy = () => {
           Isolo Mushin Lagos <br />
           22a Olubi Str <br />
           {/* http://www.dealsmarineparts.com <br /> */}
-          info@newsoko.org <br />
+          info@newsoko.com.ng <br />
           {/* (757) 391-4366 <br /> */}
         </p>
       </div>

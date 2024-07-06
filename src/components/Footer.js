@@ -20,11 +20,7 @@ const Footer = () => {
       <div className="footer__main">
         <div className="footer__main__top">
           <Link to="/">
-            <img
-              src={logoIcon}
-              alt=""
-              className="footer__main__top__logo logo"
-            />
+            <img src={logoIcon} alt="" className="footer__main__top__logo" />
           </Link>
           <div className="footer__main__top__links">
             {/* <div className="footer__main__top__links__item">
@@ -37,7 +33,7 @@ const Footer = () => {
             </div> */}
             <div className="footer__main__top__links__item">
               <img src={footerIcon2} alt="" />
-              <p>info@newsoko.org</p>
+              <p>info@newsoko.com.ng</p>
             </div>
             <div className="footer__main__top__links__item">
               <img src={footerIcon3} alt="" />
@@ -63,10 +59,10 @@ const Footer = () => {
       </div>
       <div className="footer__right">
         <p>
-          News Oko Part 2024 -{" "}
-          <a style={{ color: "#07213e" }} href="http://www.lilysolutions.org/">
-            Powered by Lilysolutions limited
-          </a>
+          Newsoko Part 2024{" "}
+          {/* <a href="https://www.lilysolutions.org/">
+            - Powered by Lilysolutions limited
+          </a> */}
         </p>
       </div>
     </footer>
