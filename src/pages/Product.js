@@ -19,6 +19,7 @@ const Product = () => {
   const [relatedProduct, setRelatedProduct] = useState(null);
   const [stock, setStock] = useState(0);
   const [amount, setAmount] = useState(1);
+  const [img, setImg] = useState("");
 
   const [step, setStep] = useState(1);
   const { id } = useParams();
@@ -144,6 +145,12 @@ const Product = () => {
     window.scrollTo(0, 0);
   }, [id]);
 
+  useEffect(() => {
+    if (product?.imgMain) {
+      setImg(product?.imgMain);
+    }
+  }, [product?.imgMain]);
+
   return (
     <div className="product">
       {loading ? (
@@ -151,8 +158,31 @@ const Product = () => {
       ) : (
         <>
           <div className="product__main">
-            <div className="product__main__imgCon">
-              <img src={product?.img ? product?.img : placeholder} alt="" />
+            <div>
+              <div className="product__main__imgCon">
+                <img src={img ? img : placeholder} alt="" />
+              </div>
+
+              <div className="product__main__othImg">
+                <img
+                  src={product?.imgMain ? product?.imgMain : placeholder}
+                  alt=""
+                  onClick={() =>
+                    img !== product?.imgMain && setImg(product?.imgMain)
+                  }
+                />
+                {product?.images?.length > 0 &&
+                  product?.images?.map((item) => {
+                    return (
+                      <img
+                        src={item}
+                        key={item}
+                        alt=""
+                        onClick={() => img !== item && setImg(item)}
+                      />
+                    );
+                  })}
+              </div>
             </div>
 
             <div className="product__main__right">

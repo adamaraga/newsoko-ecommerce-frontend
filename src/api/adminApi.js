@@ -56,6 +56,12 @@ export const editProduct = (data, token, id) => {
   });
 };
 
+export const editProductImage = (data, token, id) => {
+  return axios.put(`${apiURL}/product/images/${id}`, data, {
+    headers: { Authorization: "Bearer " + token },
+  });
+};
+
 export const deleteProduct = (token, id) => {
   return axios.delete(`${apiURL}/product/${id}`, {
     headers: { Authorization: "Bearer " + token },

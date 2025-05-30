@@ -3,14 +3,34 @@
     padding: 60px var(--body-padding);
     border-bottom: 7px solid #eaeaea;
     display: grid;
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: 3fr 4fr;
     gap: 3%;
+
+    @media screen and (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
 
     &__imgCon {
       padding: 20px;
       border: 3px solid #eaeaea;
+      // cursor: zoom-in;
+      overflow: hidden;
     }
 
+    &__othImg {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+
+      & img {
+        width: 100px;
+        padding: 5px;
+        border: 3px solid #eaeaea;
+        cursor: pointer;
+      }
+    }
     &__right {
       & h2 {
         font-weight: 600;

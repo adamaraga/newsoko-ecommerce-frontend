@@ -1,5 +1,10 @@
 import { useContext, useEffect, useState } from "react";
-import { Input, Label, Select } from "../components/styledComponent/formInputs";
+import {
+  ErrorMessage,
+  Input,
+  Label,
+  Select,
+} from "../components/styledComponent/formInputs";
 import { Context } from "../context/MainContext";
 import { addProduct } from "../api/adminApi";
 import { toast } from "react-toastify";
@@ -10,6 +15,7 @@ const AddProduct = () => {
   const { user } = useContext(Context);
   const [inputError, setInputError] = useState({});
   const [img, setimg] = useState("");
+  const [imgs, setimgs] = useState([]);
   const [name, setname] = useState("");
   const [discription, setdiscription] = useState("");
   const [price, setprice] = useState("");
@@ -21,6 +27,8 @@ const AddProduct = () => {
   const [wholeSale, setwholeSale] = useState(false);
   const [loading, setLoading] = useState(false);
   const [categories, setCategories] = useState([]);
+  const [uploadedFile, setuploadedFile] = useState(null);
+  const [uploadedFiles, setuploadedFiles] = useState([]);
 
   // const categories = [
   //   "Evinrude Outboard Motor",
@@ -49,6 +57,7 @@ const AddProduct = () => {
     let priceError = "";
     let categoryError = "";
     let stockError = "";
+    let uploadedFileError = "";
 
     if (!name) {
       nameError = "name is required, minimum 2 characters";
@@ -65,22 +74,26 @@ const AddProduct = () => {
     if (!stock) {
       stockError = "stock is required";
     }
+    if (!uploadedFile) {
+      uploadedFileError = "cover image is required";
+    }
 
     if (
       nameError ||
       discriptionError ||
       priceError ||
       categoryError ||
-      stockError
+      stockError ||
+      uploadedFileError
     ) {
       setInputError((curr) => {
         return {
-          ...curr,
           discription: discriptionError,
           name: nameError,
           price: priceError,
           category: categoryError,
           stock: stockError,
+          uploadedFile: uploadedFileError,
         };
       });
       return false;
@@ -106,26 +119,47 @@ const AddProduct = () => {
       setInputError({});
       setLoading(true);
 
-      let data = {
-        name,
-        discription,
-        price,
-        oldPrice,
-        category,
-        stock,
-        weight,
-        bestSeller,
-        wholeSale,
-        img,
-      };
+      // let data = {
+      //   name,
+      //   discription,
+      //   price,
+      //   oldPrice,
+      //   category,
+      //   stock,
+      //   weight,
+      //   bestSeller,
+      //   wholeSale,
+      //   img,
+      //   uploadedFile,
+      //   uploadedFiles,
+      // };
+      let formData = new FormData();
+      formData.append("name", name);
+      formData.append("discription", discription);
+      formData.append("price", price);
+      formData.append("oldPrice", oldPrice);
+      formData.append("category", category);
+      formData.append("stock", stock);
+      formData.append("weight", weight);
+      formData.append("bestSeller", bestSeller);
+      formData.append("wholeSale", wholeSale);
+      // formData.append("img", img);
+      formData.append("uploadedFile", uploadedFile);
+
+      for (let i = 0; i < uploadedFiles?.length; i++) {
+        formData.append("uploadedFiles", uploadedFiles?.[i]);
+      }
 
       try {
-        await addProduct(data, user?.accessToken);
+        await addProduct(formData, user?.accessToken);
 
         setLoading(false);
         toast.success("Product Added successfully");
         setname("");
         setimg("");
+        setimgs([]);
+        setuploadedFile(null);
+        setuploadedFiles([]);
         setdiscription("");
         setprice("");
         setoldPrice("");
@@ -134,6 +168,7 @@ const AddProduct = () => {
         setweight("");
         setbestSeller(false);
         setwholeSale(false);
+        window.location.reload();
       } catch (err) {
         setLoading(false);
         const message =
@@ -160,10 +195,37 @@ const AddProduct = () => {
 
   const handleFileUpload = async (e) => {
     const file = e.target.files[0];
-    const base64 = await convertToBase64(file);
-    setimg(base64);
+
+    if (file?.size > 229715) {
+      toast.warning("File too big, max size 200kb");
+    } else {
+      const base64 = await convertToBase64(file);
+      setimg(base64);
+      // setfileName(file?.name);
+      setuploadedFile(file);
+    }
   };
 
+  const handleFilesUpload = async (e) => {
+    let newImgs = [...imgs];
+    let newUF = [...uploadedFiles];
+    for (let i = 0; i < e.target.files?.length; i++) {
+      // console.log("first", e.target.files[i]);
+      const file = e.target.files[i];
+      if (file?.size > 229715) {
+        toast.warning("File too big, max size 200kb");
+      } else {
+        const base64 = await convertToBase64(file);
+        newImgs.push(base64);
+        // setfileName(file?.name);
+        newUF.push(file);
+      }
+    }
+    setuploadedFiles(newUF);
+    setimgs(newImgs);
+  };
+
+  // console.log("first", uploadedFile);
   useEffect(() => {
     if (links.length > 0) {
       const newCat = links.map((link) => {
@@ -188,11 +250,74 @@ const AddProduct = () => {
 
       <div className="addProduct__form">
         <div className="addProduct__form__item">
-          <Label htmlFor="street">Image</Label>
-          <br />
-          <input type="file" onChange={(e) => handleFileUpload(e)} />
+          <Label htmlFor="street">
+            Cover Image <span>*</span>
+          </Label>
+          {/* <br /> */}
+          <div>
+            {img && (
+              <img src={img} alt="" style={{ width: 100, marginBottom: 10 }} />
+            )}
+          </div>
+          <input
+            id="cover"
+            style={{ display: "none" }}
+            type="file"
+            onChange={(e) => handleFileUpload(e)}
+            accept="image/png, image/gif, image/jpeg, image/jpg, image/webp"
+          />
+          <label className="fileLabel" htmlFor="cover">
+            <span>Max file size: 200kb</span>
+          </label>
+          <ErrorMessage style={{ top: 0 }} show={inputError?.uploadedFile}>
+            {inputError?.uploadedFile}
+          </ErrorMessage>
         </div>
-        <br />
+        <div className="addProduct__form__item">
+          <Label htmlFor="street">Other Images</Label>
+          <button
+            onClick={() => {
+              setimgs([]);
+              setuploadedFiles([]);
+            }}
+            style={{ marginLeft: 20, cursor: "pointer" }}
+          >
+            Clear all
+          </button>
+          <br />
+          <div
+            style={{
+              display: "flex",
+              gap: 10,
+              alignItems: "center",
+              flexWrap: "wrap",
+            }}
+          >
+            {imgs?.map((item, i) => {
+              return (
+                <img
+                  key={i}
+                  src={item}
+                  alt=""
+                  style={{ width: 100, marginBottom: 10 }}
+                />
+              );
+            })}
+          </div>
+          <input
+            id="images"
+            style={{ display: "none" }}
+            type="file"
+            onChange={(e) => handleFilesUpload(e)}
+            accept="image/png, image/gif, image/jpeg, image/jpg, image/webp"
+            multiple
+          />
+          <label className="fileLabel" htmlFor="images">
+            <span> Multiple image uploads are supported.</span>
+            <span>Max file size per image: 200kb</span>
+          </label>
+        </div>
+
         <div className="addProduct__form__item">
           <Label htmlFor="name">
             Name <span>*</span>

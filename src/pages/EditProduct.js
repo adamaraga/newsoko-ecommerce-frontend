@@ -1,7 +1,12 @@
 import { useContext, useEffect, useState } from "react";
-import { Input, Label, Select } from "../components/styledComponent/formInputs";
+import {
+  ErrorMessage,
+  Input,
+  Label,
+  Select,
+} from "../components/styledComponent/formInputs";
 import { Context } from "../context/MainContext";
-import { editProduct } from "../api/adminApi";
+import { editProduct, editProductImage } from "../api/adminApi";
 import { toast } from "react-toastify";
 import Loading from "../components/Loading";
 import { fetchProduct } from "../api/usersApi";
@@ -20,7 +25,15 @@ const EditProduct = () => {
   const [bestSeller, setbestSeller] = useState(false);
   const [wholeSale, setwholeSale] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [loadingImg, setLoadingImg] = useState(false);
   const [loadingMain, setLoadingMain] = useState(false);
+  const [imgMain, setimgMain] = useState("");
+  const [images, setimages] = useState([]);
+  const [img, setimg] = useState("");
+  const [imgs, setimgs] = useState([]);
+  const [clearImage, setclearImage] = useState(false);
+  const [uploadedFile, setuploadedFile] = useState(null);
+  const [uploadedFiles, setuploadedFiles] = useState([]);
   const { id } = useParams();
 
   const categories = [
@@ -151,6 +164,10 @@ const EditProduct = () => {
           setweight(res.data.weight);
           setbestSeller(res.data.bestSeller);
           setwholeSale(res.data.wholeSale);
+          setimgMain(res.data.imgMain);
+          setimages(res.data.images);
+          setimgs(res.data.images);
+          setimg(res.data.imgMain);
 
           setLoadingMain(false);
         } catch (err) {
@@ -168,9 +185,205 @@ const EditProduct = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user?.id, user?.accessToken]);
 
+  const convertToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
+  const handleFileUpload = async (e) => {
+    const file = e.target.files[0];
+
+    if (file?.size > 229715) {
+      toast.warning("File too big, max size 200kb");
+    } else {
+      const base64 = await convertToBase64(file);
+      setimg(base64);
+      // setfileName(file?.name);
+      setuploadedFile(file);
+    }
+  };
+
+  const handleFilesUpload = async (e) => {
+    let newImgs = [...imgs];
+    let newUF = [...uploadedFiles];
+    for (let i = 0; i < e.target.files?.length; i++) {
+      // console.log("first", e.target.files[i]);
+      const file = e.target.files[i];
+      if (file?.size > 229715) {
+        toast.warning("File too big, max size 200kb");
+      } else {
+        const base64 = await convertToBase64(file);
+        newImgs.push(base64);
+        // setfileName(file?.name);
+        newUF.push(file);
+      }
+    }
+    setuploadedFiles(newUF);
+    setimgs(newImgs);
+  };
+
+  const handleImageSubmit = async () => {
+    if (user?.id) {
+      if (uploadedFile || uploadedFiles?.length > 0 || clearImage) {
+        setInputError({});
+        setLoadingImg(true);
+
+        let formData = new FormData();
+
+        if (uploadedFile) {
+          formData.append("uploadedFile", uploadedFile);
+          formData.append("imgMain", imgMain);
+        }
+        if (clearImage) {
+          formData.append("clearImage", clearImage);
+
+          if (images?.length > 0 && uploadedFiles?.length === 0) {
+            for (let i = 0; i < images?.length; i++) {
+              formData.append("images", images?.[i]);
+            }
+          }
+        }
+        if (uploadedFiles?.length > 0) {
+          for (let i = 0; i < uploadedFiles?.length; i++) {
+            formData.append("uploadedFiles", uploadedFiles?.[i]);
+          }
+          if (images?.length > 0) {
+            for (let i = 0; i < images?.length; i++) {
+              formData.append("images", images?.[i]);
+            }
+          }
+        }
+
+        try {
+          await editProductImage(formData, user?.accessToken, id);
+
+          setLoadingImg(false);
+          toast.success("Product Image Updated successfully");
+
+          window.location.reload();
+        } catch (err) {
+          setLoadingImg(false);
+          const message =
+            (err.response && err.response.data && err.response.data.message) ||
+            err.message ||
+            err.toString();
+          toast.error(message);
+        }
+      } else {
+        toast.warning("No changes made on product image");
+      }
+    }
+  };
+
   return (
-    <div className="addProduct">
-      <h2>Edit Product</h2>
+    <div className="addProduct" style={{ marginBottom: 50 }}>
+      <h2>Edit Product Images</h2>
+      {loadingMain ? (
+        <Loading />
+      ) : (
+        <>
+          <div className="addProduct__form">
+            <div className="addProduct__form__item">
+              <Label htmlFor="street">
+                Cover Image <span>*</span>
+              </Label>
+              {/* <br /> */}
+              <div>
+                {img && (
+                  <img
+                    src={img}
+                    alt=""
+                    style={{ width: 100, marginBottom: 10 }}
+                  />
+                )}
+              </div>
+              <input
+                id="cover"
+                style={{ display: "none" }}
+                type="file"
+                onChange={(e) => handleFileUpload(e)}
+                accept="image/png, image/gif, image/jpeg, image/jpg, image/webp"
+              />
+              <label className="fileLabel" htmlFor="cover">
+                <span>Max file size: 200kb</span>
+              </label>
+              <ErrorMessage style={{ top: 0 }} show={inputError?.uploadedFile}>
+                {inputError?.uploadedFile}
+              </ErrorMessage>
+            </div>
+            <div className="addProduct__form__item">
+              <Label htmlFor="street">Other Images</Label>
+              <button
+                onClick={() => {
+                  setimgs([]);
+                  setuploadedFiles([]);
+                  images?.length > 0 && setclearImage(true);
+                }}
+                style={{ marginLeft: 20, cursor: "pointer" }}
+              >
+                Clear all
+              </button>
+              <br />
+              <div
+                style={{
+                  display: "flex",
+                  gap: 10,
+                  alignItems: "center",
+                  flexWrap: "wrap",
+                }}
+              >
+                {imgs?.map((item, i) => {
+                  return (
+                    <>
+                      <img
+                        key={i}
+                        src={item}
+                        alt=""
+                        style={{ width: 100, marginBottom: 10 }}
+                      />
+                    </>
+                  );
+                })}
+                {/* <span
+                  style={{ color: "red", fontSize: "20px", cursor: "pointer", }}
+                  onClick={() => {}}
+                >
+                  x
+                </span> */}
+              </div>
+              <input
+                id="images"
+                style={{ display: "none" }}
+                type="file"
+                onChange={(e) => handleFilesUpload(e)}
+                accept="image/png, image/gif, image/jpeg, image/jpg, image/webp"
+                multiple
+              />
+              <label className="fileLabel" htmlFor="images">
+                <span> Multiple image uploads are supported.</span>
+                <span>Max file size per image: 200kb</span>
+              </label>
+            </div>
+          </div>
+          <div
+            style={{ marginBottom: 50, justifyContent: "flex-start" }}
+            className="addProduct__btn"
+          >
+            <button className="btn" onClick={handleImageSubmit}>
+              {loadingImg ? <Loading button={true} /> : "Save"}
+            </button>
+          </div>
+        </>
+      )}
+      <h2>Edit Product Detail</h2>
 
       {loadingMain ? (
         <Loading />

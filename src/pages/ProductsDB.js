@@ -184,7 +184,7 @@ const ProductsDB = () => {
                   >
                     <img
                       style={{ height: 50 }}
-                      src={product?.img ? product?.img : placeholder}
+                      src={product?.imgMain ? product?.imgMain : placeholder}
                       alt=""
                     />
                   </div>
